@@ -2,12 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-require("./config/psprt");
+// const psprt=require("./Config/psprt");
 const paymentRoutes = require('./routes/PaymentRoutes');
 const authRoutes = require("./routes/auth");
 const loginRoute = require("./routes/login");
-// const passport = require("passport");
-// const session = require("express-session");
 
 
 const app = express();
@@ -73,9 +71,9 @@ app.get("/api/backup", async (req, res) => {
 });
 app.use('/api', paymentRoutes);
 app.use("/api/auth", authRoutes); // Separate auth route
-app.use('/api/auth',loginRoute);
+app.use('/api/auth', loginRoute);
 
 // Start server
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
