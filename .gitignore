@@ -1,4 +1,4 @@
 node_modules
 # Ignore sensitive files
-Config/serviceAccountKey.json
+#Config/serviceAccountKey.json
 .env
